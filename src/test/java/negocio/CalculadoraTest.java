@@ -39,7 +39,7 @@ class CalculadoraTest {
     @Test
     void deveLancarExcecaoQuandoHouverOverflow() {
         // setup
-        int valor1 = 2147483647;
+        int valor1 = Integer.MAX_VALUE;
         int valor2 = 2;
 
         Calculadora calculadora = new Calculadora();
@@ -48,5 +48,32 @@ class CalculadoraTest {
         assertThrows(ArithmeticException.class,
                 () -> calculadora.multiplicar(valor1, valor2));
 
+    }
+
+    @Test
+    void deveDividirUmNumeroCorretamenteQuandoDividirPorZero(){
+        // setup
+        int valor1 = 5;
+        int valor2 = 0;
+        Calculadora calculadora = new Calculadora();
+
+        // act
+        assertThrows(ArithmeticException.class,
+                () -> calculadora.dividir(valor1, valor2));
+    }
+
+    @Test
+    void deveDividirUmNumeroCorretamente(){
+        // setup
+        int valor1 = 5;
+        int valor2 = 2;
+        double resultadoEsperado = 2.5;
+        Calculadora calculadora = new Calculadora();
+
+        // act
+        double resultado = calculadora.dividir(valor1, valor2);
+
+        // verify
+        assertEquals(resultadoEsperado, resultado);
     }
 }
