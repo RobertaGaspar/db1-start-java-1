@@ -1,4 +1,4 @@
-package negocio;
+package exemplos;
 
 public class Calculadora {
 

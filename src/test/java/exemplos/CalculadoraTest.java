@@ -1,6 +1,5 @@
 package exemplos;
 
-import negocio.Calculadora;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
