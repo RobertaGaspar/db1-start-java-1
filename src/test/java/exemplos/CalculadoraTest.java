@@ -33,7 +33,6 @@ class CalculadoraTest {
                 () -> calculadora.somar(valor1, valor2));
     }
 
-
     @Test
     void deveRetornarSubtracaoDeDoisNumeros() {
         // setup
@@ -114,6 +113,4 @@ class CalculadoraTest {
         assertThrows(ArithmeticException.class,
                 () -> calculadora.dividir(valor1, valor2));
     }
-
-
 }
