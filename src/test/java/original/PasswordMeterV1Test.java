@@ -31,9 +31,7 @@ class PasswordMeterV1Test {
                 "[C: 0 | B: 0] Sequential Symbols";
 
         var meter = new PasswordMeterV1();
-
         meter.checkPassword("123456");
-
         assertEquals(expected, meter.toString());
     }
 }

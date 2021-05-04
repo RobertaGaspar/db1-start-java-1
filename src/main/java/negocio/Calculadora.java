@@ -1,18 +1,23 @@
 package negocio;
 
 public class Calculadora {
+
     public int somar(int a, int b) {
-        return a + b;
+        return Math.addExact(a, b);
     }
 
-    public int multiplicar(int valor1, int valor2) {
-        return Math.multiplyExact(valor1, valor2);
+    public int multiplicar(int a, int b) {
+        return Math.multiplyExact(a, b);
     }
 
-    public double dividir(double valor1, double valor2) {
-        if (valor2 == 0)
-            throw new ArithmeticException("Não dá pra fazer");
+    public double dividir(double divisor, double dividendo) {
+        if (dividendo == 0)
+            throw new ArithmeticException("Divisão por zero não é permitida.");
 
-        return valor1 / valor2;
+        return divisor / dividendo;
+    }
+
+    public int subtrair(int valor1, int valor2) {
+        return Math.subtractExact(valor1, valor2);
     }
 }
